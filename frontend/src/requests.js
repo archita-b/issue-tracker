@@ -5,3 +5,15 @@ export async function fetchIssues() {
   const issues = await response.json();
   return issues;
 }
+
+export async function createIssue(newIssue) {
+  const response = await fetch(`${baseUrl}/issues`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(newIssue),
+  });
+  const addedIssue = await response.json();
+  return addedIssue;
+}
