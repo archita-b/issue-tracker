@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { fetchIssues } from "../requests";
+import IssueItem from "./IssueItem";
 
 const Issue = () => {
   const [issues, setIssues] = useState([]);
