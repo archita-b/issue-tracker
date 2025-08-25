@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import IssueList from "./components/IssueList";
 import IssueForm from "./components/IssueForm";
+import Navbar from "./components/Navbar";
 import { createIssue, fetchIssues } from "./requests";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <IssueForm addIssue={addIssue} />
       <IssueList issues={issues} />
     </>
