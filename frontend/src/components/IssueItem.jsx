@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./issueitem.css";
+
 const IssueItem = ({ issue, onUpdate }) => {
   const [title, setTitle] = useState(issue.title);
   const [status, setStatus] = useState(issue.status);
@@ -11,7 +13,7 @@ const IssueItem = ({ issue, onUpdate }) => {
   }
 
   return (
-    <div>
+    <li className="issue-item">
       {isEditing ? (
         <>
           <select value={status} onChange={(e) => setStatus(e.target.value)}>
@@ -29,7 +31,7 @@ const IssueItem = ({ issue, onUpdate }) => {
           <button onClick={() => setIsEditing(true)}>Edit</button>
         </>
       )}
-    </div>
+    </li>
   );
 };
 
