@@ -1,7 +1,7 @@
-import React from "react";
+import "./navbar.css";
 
 const Navbar = () => {
-  return <div>Issue-Tracker</div>;
+  return <div className="navbar">Issue-Tracker</div>;
 };
 
 export default Navbar;
