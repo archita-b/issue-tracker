@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./issueform.css";
+
 const IssueForm = ({ addIssue }) => {
   const [newIssue, setNewIssue] = useState("");
 
@@ -13,7 +15,7 @@ const IssueForm = ({ addIssue }) => {
   }
 
   return (
-    <div>
+    <div className="issue-form">
       <form onSubmit={handleSubmit}>
         <input
           value={newIssue}

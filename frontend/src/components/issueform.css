@@ -1,0 +1,22 @@
+.issue-form {
+    margin-bottom: 2rem;
+}
+.issue-form input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+.issue-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #008000dd; 
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.issue-form button:hover {
+  background-color: #008000ff;
+}
