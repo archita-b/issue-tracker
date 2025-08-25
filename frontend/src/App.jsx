@@ -1,10 +1,19 @@
+import { useState, useEffect } from "react";
+
 import "./App.css";
-import Issue from "./components/Issue";
+import IssueList from "./components/IssueList";
+import { fetchIssues } from "./requests";
 
 function App() {
+  const [issues, setIssues] = useState([]);
+
+  useEffect(() => {
+    fetchIssues().then((issues) => setIssues(issues));
+  }, [issues]);
+
   return (
     <>
-      <Issue />
+      <IssueList issues={issues} />
     </>
   );
 }
