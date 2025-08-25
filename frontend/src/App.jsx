@@ -1,7 +1,12 @@
 import "./App.css";
+import Issue from "./components/Issue";
 
 function App() {
-  return <>hello</>;
+  return (
+    <>
+      <Issue />
+    </>
+  );
 }
 
 export default App;
