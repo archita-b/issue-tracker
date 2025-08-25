@@ -17,3 +17,15 @@ export async function createIssue(newIssue) {
   const addedIssue = await response.json();
   return addedIssue;
 }
+
+export async function updateIssue(issueId, updates) {
+  const response = await fetch(`${baseUrl}/issues/${issueId}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(updates),
+  });
+  const updatedIssue = await response.json();
+  return updatedIssue;
+}

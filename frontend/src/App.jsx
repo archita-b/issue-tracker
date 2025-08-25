@@ -4,19 +4,19 @@ import "./App.css";
 import IssueList from "./components/IssueList";
 import IssueForm from "./components/IssueForm";
 import Navbar from "./components/Navbar";
-import { createIssue, fetchIssues } from "./requests";
+import { createIssue, fetchIssues, updateIssue } from "./requests";
 
 function App() {
   const [issues, setIssues] = useState([]);
 
   useEffect(() => {
     fetchIssues().then((issues) => setIssues(issues));
-  }, [issues]);
+  }, []);
 
   function addIssue(title) {
     const newIssue = {
       title: title,
-      status: "",
+      status: "pending",
     };
     createIssue(newIssue).then((addedIssue) =>
       setIssues((currentIssues) => {
@@ -25,11 +25,21 @@ function App() {
     );
   }
 
+  function updateIssueHandler(id, updates) {
+    updateIssue(id, updates).then((updated) => {
+      setIssues((currentIssues) => {
+        return currentIssues.map((issue) =>
+          issue.id === id ? { ...issue, ...updated } : issue
+        );
+      });
+    });
+  }
+
   return (
     <>
       <Navbar />
       <IssueForm addIssue={addIssue} />
-      <IssueList issues={issues} />
+      <IssueList issues={issues} onUpdate={updateIssueHandler} />
     </>
   );
 }
