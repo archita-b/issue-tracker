@@ -1,7 +1,12 @@
 import React from "react";
 
-const IssueItem = () => {
-  return <div>issue item</div>;
+const IssueItem = ({ issue }) => {
+  return (
+    <div>
+      <div>{issue.status}</div>
+      <div>{issue.title}</div>
+    </div>
+  );
 };
 
 export default IssueItem;
