@@ -1,4 +1,8 @@
-const baseUrl = "http://localhost:5000/api";
+let baseUrl = "http://localhost:5000/api";
+
+if (import.meta.env.PROD) {
+  baseUrl = "https://issue-tracker-3qrw.onrender.com/api";
+}
 
 export async function fetchIssues() {
   const response = await fetch(`${baseUrl}/issues`);
